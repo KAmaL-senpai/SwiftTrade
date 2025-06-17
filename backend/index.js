@@ -21,7 +21,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: [
+      "https://swift-trade-wbro.vercel.app/",
+      "https://swift-trade.vercel.app/",
+    ],
     credentials: true,
   })
 );
