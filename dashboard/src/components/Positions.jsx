@@ -5,7 +5,9 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:8080/allPositions", { withCredentials: true })
+      .get(`${import.meta.env.VITE_API_BASE_URL}/allPositions`, {
+        withCredentials: true,
+      })
       .then((res) => {
         if (Array.isArray(res.data.positions)) {
           setAllPositions(res.data.positions);

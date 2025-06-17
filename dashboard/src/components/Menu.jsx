@@ -17,10 +17,10 @@ const Menu = ({ user }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:8080/logout", {
+      await axios.get(`${import.meta.env.VITE_API_BASE_URL}/logout`, {
         withCredentials: true,
       });
-      window.location.href = "http://localhost:5173/";
+      window.location.href = `${import.meta.env.fronend_url}/`;
     } catch (err) {
       console.error("Logout failed:", err);
     }

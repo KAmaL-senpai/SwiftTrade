@@ -11,13 +11,16 @@ const Home = () => {
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
-        window.location.href = "http://localhost:5173/login";
+        window.location.href = `${import.meta.env.fronend_url}/login`;
       }
 
       try {
-        const { data } = await axios.get("http://localhost:8080/verify", {
-          withCredentials: true,
-        });
+        const { data } = await axios.get(
+          `${import.meta.env.VITE_API_BASE_URL}/verify`,
+          {
+            withCredentials: true,
+          }
+        );
 
         const { status, user } = data;
         setUsername(user);
@@ -25,7 +28,7 @@ const Home = () => {
       } catch (err) {
         console.error(err);
         removeCookie("token");
-        window.location.href = "http://localhost:5173/login";
+        window.location.href = `${import.meta.env.fronend_url}/login`;
       }
     };
 

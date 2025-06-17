@@ -17,7 +17,9 @@ const Dashboard = ({ user }) => {
   const [userHoldings, setUserHoldings] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:8080/allHoldings", { withCredentials: true })
+      .get(`${import.meta.env.VITE_API_BASE_URL}/allHoldings`, {
+        withCredentials: true,
+      })
       .then((res) => {
         console.log("Holdings Response:", res.data);
         // Ensure response is an array

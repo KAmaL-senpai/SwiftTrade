@@ -14,12 +14,12 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = () => {
     axios.post(
-      "http://localhost:8080/newOrder",
+      `${import.meta.env.VITE_API_BASE_URL}/newOrder`,
       {
         name: uid,
         qty: stockQuantity,
         price: stockPrice,
-        mode:"BUY"
+        mode: "BUY",
       },
       { withCredentials: true }
     );

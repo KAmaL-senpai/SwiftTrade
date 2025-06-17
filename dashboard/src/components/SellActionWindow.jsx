@@ -18,11 +18,15 @@ const SellActionWindow = ({ uid, availableQty }) => {
       return;
     }
 
-    axios.post("http://localhost:8080/SellOrder", {
-      name: uid,
-      qty: stockQuantity,
-      price: stockPrice,
-    },{withCredentials:true});
+    axios.post(
+      `${import.meta.env.VITE_API_BASE_URL}/SellOrder`,
+      {
+        name: uid,
+        qty: stockQuantity,
+        price: stockPrice,
+      },
+      { withCredentials: true }
+    );
 
     closeSellWindow();
   };
