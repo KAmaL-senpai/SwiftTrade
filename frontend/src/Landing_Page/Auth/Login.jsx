@@ -36,7 +36,7 @@ function Login() {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "https://swift-trade-wbro.vercel.app/";
+          window.location.href = `${import.meta.env.VITE_FRONTEND_URL}`;
         }, 1000);
       } else {
         handleError(message);
