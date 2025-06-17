@@ -11,12 +11,12 @@ const Home = () => {
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
-        window.location.href = `${process.env.VITE_FRONTEND_URL}/login`;
+        window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/login`;
       }
 
       try {
         const { data } = await axios.get(
-          `${process.env.VITE_API_BASE_URL}/verify`,
+          `${process.env.REACT_APP_API_BASE_URL}/verify`,
           {
             withCredentials: true,
           }
@@ -28,7 +28,7 @@ const Home = () => {
       } catch (err) {
         console.error(err);
         removeCookie("token");
-        window.location.href = `${process.env.VITE_FRONTEND_URL}/login`;
+        window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/login`;
       }
     };
 

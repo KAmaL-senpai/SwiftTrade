@@ -6,7 +6,7 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
   useEffect(() => {
     axios
-      .get(`${process.env.VITE_API_BASE_URL}/allHoldings`, {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/allHoldings`, {
         withCredentials: true,
       })
       .then((res) => {

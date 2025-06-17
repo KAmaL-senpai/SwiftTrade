@@ -5,7 +5,7 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
   useEffect(() => {
     axios
-      .get(`${process.env.VITE_API_BASE_URL}/allPositions`, {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/allPositions`, {
         withCredentials: true,
       })
       .then((res) => {

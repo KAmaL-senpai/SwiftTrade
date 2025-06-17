@@ -17,10 +17,10 @@ const Menu = ({ user }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.get(`${process.env.VITE_API_BASE_URL}/logout`, {
+      await axios.get(`${process.env.REACT_APP_API_BASE_URL}/logout`, {
         withCredentials: true,
       });
-      window.location.href = `${process.env.VITE_FRONTEND_URL}/`;
+      window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/`;
     } catch (err) {
       console.error("Logout failed:", err);
     }
