@@ -19,7 +19,7 @@ const SellActionWindow = ({ uid, availableQty }) => {
     }
 
     axios.post(
-      `${import.meta.env.VITE_API_BASE_URL}/SellOrder`,
+      `${process.env.VITE_API_BASE_URL}/SellOrder`,
       {
         name: uid,
         qty: stockQuantity,

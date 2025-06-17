@@ -14,7 +14,7 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = () => {
     axios.post(
-      `${import.meta.env.VITE_API_BASE_URL}/newOrder`,
+      `${process.env.VITE_API_BASE_URL}/newOrder`,
       {
         name: uid,
         qty: stockQuantity,
