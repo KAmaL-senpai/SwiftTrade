@@ -1,0 +1,29 @@
+# Node modules across all
+**/node_modules/
+
+# Env files
+**/.env
+
+# Logs
+*.log
+logs
+
+# Build outputs
+**/dist/
+**/build/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VSCode or JetBrains configs
+.vscode/
+.idea/
+
+
+# Unignore key frontend files and folders
+!frontend/
+!frontend/package.json
+!frontend/vite.config.js
+!frontend/src/
+!frontend/public/

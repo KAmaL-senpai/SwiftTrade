@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="40">
+  <!-- Left logo block (approximate) -->
+  <rect x="0" y="0" width="40" height="40" fill="#387ed1" />
+  <path d="M0,0 L40,0 L0,40 Z" fill="white" />
+
+  <!-- SwiftTrade text, tightly next to symbol, vertically centered -->
+  <text x="42" y="28" font-family="Arial, sans-serif" font-size="24" fill="#387ed1" font-weight="bold">
+    SwiftTrade
+  </text>
+</svg>
