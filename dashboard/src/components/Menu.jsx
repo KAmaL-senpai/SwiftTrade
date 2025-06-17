@@ -20,7 +20,7 @@ const Menu = ({ user }) => {
       await axios.get(`${import.meta.env.VITE_API_BASE_URL}/logout`, {
         withCredentials: true,
       });
-      window.location.href = `${import.meta.env.fronend_url}/`;
+      window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/`;
     } catch (err) {
       console.error("Logout failed:", err);
     }

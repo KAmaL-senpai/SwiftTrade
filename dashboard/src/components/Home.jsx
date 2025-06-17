@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
-        window.location.href = `${import.meta.env.fronend_url}/login`;
+        window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login`;
       }
 
       try {
@@ -28,7 +28,7 @@ const Home = () => {
       } catch (err) {
         console.error(err);
         removeCookie("token");
-        window.location.href = `${import.meta.env.fronend_url}/login`;
+        window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login`;
       }
     };
 
