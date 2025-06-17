@@ -36,7 +36,7 @@ function Login() {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "http://localhost:3000";
+          window.location.href = "https://swift-trade-wbro.vercel.app/";
         }, 1000);
       } else {
         handleError(message);
