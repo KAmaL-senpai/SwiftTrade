@@ -27,7 +27,6 @@ const Home = () => {
         } else {
           setUsername(user);
         }
-
       } catch (err) {
         console.error("Verification failed:", err);
         removeCookie("token");
