@@ -22,12 +22,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: [
-      "https://swift-trade-wbro.vercel.app/",
-      "https://swift-trade.vercel.app/",
+      "https://swift-trade.vercel.app",
+      "https://swift-trade-wbro.vercel.app",
     ],
     credentials: true,
   })
 );
+
 
 async function main() {
   await mongoose.connect(dburl);
