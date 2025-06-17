@@ -3,17 +3,14 @@ import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
 import axios from "axios";
 import { useCookies } from "react-cookie";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 const Home = () => {
-  const [cookies, removeCookie] = useCookies([]);
+  const [, , removeCookie] = useCookies([]);
   const [username, setUsername] = useState("");
+
   useEffect(() => {
     const verifyCookie = async () => {
-      if (!cookies.token) {
-        window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/login`;
-      }
-
       try {
         const { data } = await axios.get(
           `${process.env.REACT_APP_API_BASE_URL}/verify`,
@@ -23,17 +20,23 @@ const Home = () => {
         );
 
         const { status, user } = data;
-        setUsername(user);
+
+        if (!status) {
+          removeCookie("token");
+          window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/login`;
+        } else {
+          setUsername(user);
+        }
 
       } catch (err) {
-        console.error(err);
+        console.error("Verification failed:", err);
         removeCookie("token");
         window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/login`;
       }
     };
 
     verifyCookie();
-  }, [cookies, removeCookie]);
+  }, [removeCookie]);
 
   return (
     <>
